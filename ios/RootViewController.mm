@@ -30,6 +30,20 @@
 #include "platform/CCApplication.h"
 #include "platform/ios/CCEAGLView-ios.h"
 
+#import <opencv2/imgcodecs/ios.h>
+#import <opencv2/videoio/cap_ios.h>
+
+#import "RetroFilter.hpp"
+
+@interface RootViewController ()<CvPhotoCameraDelegate>{
+    
+    //    RetroFilter::Parameters params;
+}
+
+@property (nonatomic, strong) CvPhotoCamera* photoCamera;
+
+@end
+
 @implementation RootViewController
 
 /*
@@ -92,6 +106,42 @@ return self;
     [super didReceiveMemoryWarning];
 
     // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark- CvPhotoCameraDelegate
+- (void)photoCamera:(CvPhotoCamera*)camera
+      capturedImage:(UIImage *)image;
+{
+    //    [camera stop];
+    //    [_imageView setImage:image];
+    //    callback_(image);
+    //    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (void)photoCameraCancel:(CvPhotoCamera*)camera{
+    Delog(@"photoCameraCancel");
+}
+
+-(void)openCamera{
+    // Initialize camera
+    //    _photoCamera = [[CvPhotoCamera alloc] initWithParentView:[UIView new]];
+    _photoCamera.delegate = self;
+    _photoCamera.defaultAVCaptureDevicePosition =
+    AVCaptureDevicePositionFront;
+    _photoCamera.defaultAVCaptureSessionPreset =
+    AVCaptureSessionPresetPhoto;
+    _photoCamera.defaultAVCaptureVideoOrientation =
+    AVCaptureVideoOrientationPortrait;
+    
+    //    // Load images
+    //    UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
+    //    UIImageToMat(resImage, params.scratches);
+    //
+    //    resImage = [UIImage imageNamed:@"fuzzy_border.png"];
+    //    UIImageToMat(resImage, params.fuzzyBorder);
+    
+    [_photoCamera start];
 }
 
 
