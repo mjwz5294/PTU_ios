@@ -10,18 +10,9 @@
 @implementation CreatorBridge
 
 +(void)restMethed{
-    NSLog(@"restMethed--------------%@",[UIApplication sharedApplication].keyWindow.rootViewController);
+    NSLog(@"restMethed--------------");
     
-    [CreatorBridge addTestView];
-}
-
-+(void)addTestView{
-    UIView* rootView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
-    UIView* testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight/2)];
-    [rootView addSubview:testView];
-    
-    [testView setBackgroundColor:[UIColor redColor]];
-    [testView setAlpha:0.5];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"openCamera" object:nil];
 }
 
 @end

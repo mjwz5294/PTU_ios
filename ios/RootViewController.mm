@@ -41,6 +41,7 @@
 }
 
 @property (nonatomic, strong) CvPhotoCamera* photoCamera;
+@property (nonatomic, strong) UIImageView* imgView;
 
 @end
 
@@ -60,11 +61,16 @@ return self;
 - (void)loadView {
     // Set EAGLView as view of RootViewController
     self.view = (__bridge CCEAGLView *)cocos2d::Application::getInstance()->getView();
+    _imgView = [[UIImageView alloc] initWithFrame:self.view.frame];
+//    _imgView.
+    [self.view addSubview:_imgView];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openCamera) name:@"openCamera" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -73,6 +79,11 @@ return self;
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 
@@ -112,7 +123,7 @@ return self;
 - (void)photoCamera:(CvPhotoCamera*)camera
       capturedImage:(UIImage *)image;
 {
-    //    [camera stop];
+        [camera stop];
     //    [_imageView setImage:image];
     //    callback_(image);
     //    [self dismissViewControllerAnimated:YES completion:nil];
@@ -124,8 +135,10 @@ return self;
 }
 
 -(void)openCamera{
+    
+    Delog(@"openCamera--------------------");
     // Initialize camera
-    //    _photoCamera = [[CvPhotoCamera alloc] initWithParentView:[UIView new]];
+    _photoCamera = [[CvPhotoCamera alloc] initWithParentView:_imgView];
     _photoCamera.delegate = self;
     _photoCamera.defaultAVCaptureDevicePosition =
     AVCaptureDevicePositionFront;
