@@ -13,6 +13,7 @@
 		046C4F68219A9AAA00487552 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C4F67219A9AAA00487552 /* CoreVideo.framework */; };
 		046C4F6A219A9AB300487552 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C4F69219A9AB300487552 /* CoreMedia.framework */; };
 		046C4F6C219A9ABD00487552 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C4F6B219A9ABD00487552 /* AssetsLibrary.framework */; };
+		046C4F6E219A9FAF00487552 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C4F6D219A9FAF00487552 /* opencv2.framework */; };
 		1A37E9DA200DEF120078AF72 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A37E9D9200DEF110078AF72 /* SystemConfiguration.framework */; };
 		1A37E9DC200DEF190078AF72 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A37E9DB200DEF190078AF72 /* SystemConfiguration.framework */; };
 		1A499EBB1F0CDDC3004E6AEC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A499EBA1F0CDDC3004E6AEC /* CFNetwork.framework */; };
@@ -116,6 +117,7 @@
 		046C4F67219A9AAA00487552 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
 		046C4F69219A9AB300487552 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		046C4F6B219A9ABD00487552 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		046C4F6D219A9FAF00487552 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A37E9D9200DEF110078AF72 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		1A37E9DB200DEF190078AF72 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -236,6 +238,7 @@
 				A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */,
 				A92275461517C094001B78AA /* OpenAL.framework in Frameworks */,
 				A92275481517C094001B78AA /* AudioToolbox.framework in Frameworks */,
+				046C4F6E219A9FAF00487552 /* opencv2.framework in Frameworks */,
 				A922754A1517C094001B78AA /* AVFoundation.framework in Frameworks */,
 				A922754C1517C094001B78AA /* UIKit.framework in Frameworks */,
 				A922754E1517C094001B78AA /* Foundation.framework in Frameworks */,
@@ -310,6 +313,7 @@
 				046C4F65219A9AA000487552 /* Accelerate.framework */,
 				046C4F63219A9A8800487552 /* CoreImage.framework */,
 				046C4F61219A9A7C00487552 /* libc++.tbd */,
+				046C4F6D219A9FAF00487552 /* opencv2.framework */,
 				1A37E9D9200DEF110078AF72 /* SystemConfiguration.framework */,
 				1A37E9DB200DEF190078AF72 /* SystemConfiguration.framework */,
 				1ACA99241F550A28002DE225 /* JavaScriptCore.framework */,
@@ -670,6 +674,10 @@
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = TU5QH7P4TH;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -706,6 +714,10 @@
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = TU5QH7P4TH;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
