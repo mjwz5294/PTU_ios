@@ -27,7 +27,7 @@
 #import "AppController.h"
 #import "cocos2d.h"
 #import "AppDelegate.h"
-#import "RootViewController.h"
+#import "RootViewControllerV2.h"
 #import "platform/ios/CCEAGLView-ios.h"
 
 #import "cocos-analytics/CAAgent.h"
@@ -55,11 +55,11 @@ Application* app = nullptr;
     app = new AppDelegate(bounds.size.width * scale, bounds.size.height * scale);
     app->setMultitouch(true);
 
-    // Use RootViewController to manage CCEAGLView
-    _viewController = [[RootViewController alloc]init];
+    // Use RootViewControllerV2 to manage CCEAGLView
+    _viewController = [[RootViewControllerV2 alloc]init];
     _viewController.wantsFullScreenLayout = YES;
 
-    // Set RootViewController to window
+    // Set RootViewControllerV2 to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
     {
         // warning: addSubView doesn't work on iOS6

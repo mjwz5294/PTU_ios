@@ -30,19 +30,9 @@
 #include "platform/CCApplication.h"
 #include "platform/ios/CCEAGLView-ios.h"
 
-#import <opencv2/imgcodecs/ios.h>
-#import <opencv2/videoio/cap_ios.h>
-
-#import "RetroFilter.hpp"
-
-@interface RootViewController ()<CvPhotoCameraDelegate>{
+@interface RootViewController (){
     
-    //    RetroFilter::Parameters params;
 }
-
-@property (nonatomic, strong) CvPhotoCamera* photoCamera;
-@property (nonatomic, strong) UIImageView* imgView;
-
 @end
 
 @implementation RootViewController
@@ -61,16 +51,12 @@ return self;
 - (void)loadView {
     // Set EAGLView as view of RootViewController
     self.view = (__bridge CCEAGLView *)cocos2d::Application::getInstance()->getView();
-    _imgView = [[UIImageView alloc] initWithFrame:self.view.frame];
-//    _imgView.
-    [self.view addSubview:_imgView];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openCamera) name:@"openCamera" object:nil];
+//    [self.view setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -117,44 +103,6 @@ return self;
     [super didReceiveMemoryWarning];
 
     // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark- CvPhotoCameraDelegate
-- (void)photoCamera:(CvPhotoCamera*)camera
-      capturedImage:(UIImage *)image;
-{
-        [camera stop];
-    //    [_imageView setImage:image];
-    //    callback_(image);
-    //    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
-- (void)photoCameraCancel:(CvPhotoCamera*)camera{
-    Delog(@"photoCameraCancel");
-}
-
--(void)openCamera{
-    
-    Delog(@"openCamera--------------------");
-    // Initialize camera
-    _photoCamera = [[CvPhotoCamera alloc] initWithParentView:_imgView];
-    _photoCamera.delegate = self;
-    _photoCamera.defaultAVCaptureDevicePosition =
-    AVCaptureDevicePositionFront;
-    _photoCamera.defaultAVCaptureSessionPreset =
-    AVCaptureSessionPresetPhoto;
-    _photoCamera.defaultAVCaptureVideoOrientation =
-    AVCaptureVideoOrientationPortrait;
-    
-    //    // Load images
-    //    UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
-    //    UIImageToMat(resImage, params.scratches);
-    //
-    //    resImage = [UIImage imageNamed:@"fuzzy_border.png"];
-    //    UIImageToMat(resImage, params.fuzzyBorder);
-    
-    [_photoCamera start];
 }
 
 

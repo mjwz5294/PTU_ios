@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0435BBE4219C449300CBA312 /* RootViewControllerV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435BBE3219C449300CBA312 /* RootViewControllerV2.m */; };
 		046C4F62219A9A7C00487552 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C4F61219A9A7C00487552 /* libc++.tbd */; };
 		046C4F64219A9A8800487552 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C4F63219A9A8800487552 /* CoreImage.framework */; };
 		046C4F66219A9AA000487552 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C4F65219A9AA000487552 /* Accelerate.framework */; };
@@ -131,6 +132,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0435BBE2219C449300CBA312 /* RootViewControllerV2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewControllerV2.h; sourceTree = "<group>"; };
+		0435BBE3219C449300CBA312 /* RootViewControllerV2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewControllerV2.m; sourceTree = "<group>"; };
 		046C4F61219A9A7C00487552 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
 		046C4F63219A9A8800487552 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
 		046C4F65219A9AA000487552 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
@@ -485,6 +488,8 @@
 				509D4AB917EBB2AB00697056 /* Prefix.pch */,
 				509D4ABA17EBB2AB00697056 /* RootViewController.h */,
 				509D4ABB17EBB2AB00697056 /* RootViewController.mm */,
+				0435BBE2219C449300CBA312 /* RootViewControllerV2.h */,
+				0435BBE3219C449300CBA312 /* RootViewControllerV2.m */,
 			);
 			name = ios;
 			sourceTree = "<group>";
@@ -657,6 +662,7 @@
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
 				046C4FA3219AA09000487552 /* FaceAnimator.cpp in Sources */,
 				046C4FA8219AA09000487552 /* CreatorBridge.m in Sources */,
+				0435BBE4219C449300CBA312 /* RootViewControllerV2.m in Sources */,
 				046C4FA5219AA09000487552 /* Processing_Accelerate.cpp in Sources */,
 				046C4FB5219AA27300487552 /* BaseView.m in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,

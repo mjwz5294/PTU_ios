@@ -25,13 +25,13 @@
  ****************************************************************************/
 #import <UIKit/UIKit.h>
 
-@class RootViewController;
+@class RootViewControllerV2;
 
 @interface AppController : NSObject <UIApplicationDelegate>
 {
 }
 
-@property(nonatomic, readonly) RootViewController* viewController;
+@property(nonatomic, readonly) RootViewControllerV2* viewController;
 
 @end
 
